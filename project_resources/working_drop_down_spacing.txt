@@ -1,35 +1,27 @@
-
-<!-- ae 314: ae
- photography website for my mum using flexbox. only css and html :)
- -->
-
 <!doctype html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Photography Portfolio</title>
   <style>
-    
+    /* reset & base */
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { display: flex; flex-direction: column; min-height: 100vh; font-family: serif; }
 
-    /* header: flex containers for header elements: title, nav buttons, hidden burger dropdown */
+    /* header: three equal zones */
     header {
+      position: relative;
       display: flex;
       align-items: center;
       padding: 1em 2em;
       background: #ececcb;
-      position: relative;
     }
     .header-section { flex: 1; display: flex; align-items: center; }
-    .header-section.title  { justify-content: flex-start; }
-    .header-section.nav    { justify-content: center; }
-    .header-section.toggle { justify-content: flex-end; }
+    .header-section.title { justify-content: flex-start; }
+    .header-section.nav   { justify-content: center; }
+    .header-section.toggle{ justify-content: flex-end; }
 
-    /* title class */
+    /* title */
     .site-title {
       all: unset;
       cursor: pointer;
@@ -38,15 +30,13 @@
       color: #333;
     }
 
-    /* inline links container and elements */
+    /* inline links */
     .nav-links { display: flex; gap: 2em; }
     .nav-links a { text-decoration: none; color: #333; font-size: 1.2em; }
 
-    /* hamburger toggle (hidden on desktop) */
+    /* mobile toggle (hidden desktop) */
     .toggle-details { display: none; }
-
     .toggle-details summary {
-
       all: unset;
       display: block;
       cursor: pointer;
@@ -54,24 +44,18 @@
       padding: 0.25em;
     }
 
-    /* main page content container & footer */
-    main { flex: 1; padding: 2em; }
-    footer { padding: 2em; background: #ececcb; }
+    /* blur when open */
+    body:has(.toggle-details[open]) main article {
+      filter: blur(5px);
+      pointer-events: none;
+    }
 
-    /* mobile responsive design*/
-
+    /* mobile rules */
     @media (max-width: 600px) {
-
-      /* hide center nav, show burger */
-
-      .header-section.nav    { display: none; }
-      .toggle-details        { display: flex; }
-
-      /* dropdown styling--positioning + blur */
-      .toggle-details nav { display: none; }
-
+      .header-section.nav   { display: none; }
+      .toggle-details       { display: flex; }
+      .toggle-details nav   { display: none; }
       .toggle-details[open] nav {
-
         display: flex;
         flex-direction: column;
         position: absolute;
@@ -82,37 +66,29 @@
         max-height: calc(100vh - 100%);
         overflow-y: auto;
       }
-
       .toggle-details[open] nav a {
-
         padding: 1em;
         border-bottom: 1px solid #ddd;
         text-decoration: none;
         color: #333;
         font-size: 1.2em;
       }
-
-      /* blur only on mobile when menu is open */
-      body:has(.toggle-details[open]) main article {
-        filter: blur(5px);
-        pointer-events: none;
-      }
-
     }
 
+    /* main & footer */
+    main { flex: 1; padding: 2em; }
+    footer { padding: 2em; background: #ececcb; }
   </style>
 </head>
-
 <body>
-    <!-- main page content begins-->
   <header>
     <div class="header-section title">
       <button class="site-title">Photography by abc abcabcabca</button>
     </div>
     <div class="header-section nav">
       <nav class="nav-links">
-        <a href="#">Portfolio</a>
-        <a href="#">Donate</a>
+        <a href="#">Photos</a>
+        <a href="#">Gallery</a>
         <a href="#">Contact</a>
       </nav>
     </div>
@@ -120,9 +96,9 @@
       <details class="toggle-details">
         <summary>&#9776;</summary>
         <nav>
-          <a href="#">Portfolio albums</a>
-          <a href="#">Donate/Download Request</a>
-          <a href="#">Contact/Booking</a>
+          <a href="#">Photos</a>
+          <a href="#">Gallery</a>
+          <a href="#">Contact</a>
         </nav>
       </details>
     </div>
@@ -130,15 +106,13 @@
 
   <main>
     <article>
-      <!-- to do: add photogallery page for wide layout and single column for mobile -->
-
-      <p>This text will become blurred if the burger is working properly.</p>
-
+      <!-- Your main content here -->
+      <p>Resize to under 600 px, click the ☰, and you’ll see the dropdown on a light-grey background, with the article blurred behind it.</p>
     </article>
   </main>
 
   <footer>
-    Photos and content &#169 Abc Abcabcabc...
+    Footer content
   </footer>
 </body>
 </html>

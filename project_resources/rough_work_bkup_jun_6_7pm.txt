@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Photography Portfolio</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; }
+    body { display: flex; flex-direction: column; }
+
+    header {
+      position: relative;
+      display: flex;
+      justify-content: left;    /* center the inline nav on wide screens */
+      align-items: center;
+      padding: 1em;
+      
+      
+      background: #ececcb;
+      font-size: large;
+      
+    }
+
+    /* title as a button on the left */
+    .site-title {
+      
+      display:flex;
+      justify-content: left;
+      
+      font-weight: bold;
+      font-style: italic;
+     
+      top: 40%;
+      transform: translateY(-10%);
+      z-index: 1;
+      text-transform: capitalize;
+      text-shadow: #333;
+     
+       
+    }
+    .site-title button {
+      background: none;
+      border: none;
+      font-size: 1.2em;
+      
+      text-shadow: #333;
+      cursor: pointer;
+      color: #333;
+      
+    }
+
+    /* always-visible nav buttons (centered) */
+    .nav-inline {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 2em;
+      padding:1em                    /* extra spacing between buttons */
+    }
+    .nav-inline a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    /* hamburger toggle (hidden on wide) */
+    .nav-toggle { display: none; }
+    .nav-toggle summary {
+      font-size: 1.5em;
+      cursor: pointer;
+    }
+
+    /* blur main content when menu is open */
+    body:has(.nav-toggle[open]) #main > article {
+      filter: blur(5px);
+      pointer-events: none;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        justify-content: left;  /* left-align title & burger */
+        padding:2em;
+    
+        
+      }
+      /* make title flow in flex so we can space beside it */
+      .site-title {
+        position: static;
+        transform: none;
+        margin-right: 2em;
+        
+        text-transform: capitalize;
+        text-shadow: #333;
+        
+      }
+      .nav-inline {
+        display: none;               /* hide inline buttons */
+      }
+      .nav-toggle {
+        display: block;              /* show hamburger */
+        position: static;
+        /* margin-left from title is handled above */
+      }
+      .nav-toggle nav {
+        display: none;
+      }
+      .nav-toggle[open] nav {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        max-height: calc(100vh - 100%);
+        overflow-y: auto;
+        background: #fff;
+      }
+      .nav-toggle[open] nav a {
+        padding: 1em;
+        border-bottom: 1px solid #ddd;
+        text-decoration: none;
+        color: #333;
+      }
+    }
+
+    /* main & footer */
+    #main { flex: 1; display: flex; }
+    #main > article { flex: 1; padding: 2em; }
+    footer { padding: 2em; background: #ececcb; }
+   
+  </style>
+</head>
+<body>
+  <header>
+    <div class="site-title">
+      <button onclick="location.href='#'">Photography by </button>
+    </div>
+
+    <nav class="nav-inline">
+      <a href="#">Photos</a>
+      <a href="#">Gallery</a>
+      <a href="#">Contact</a>
+    </nav>
+
+    <details class="nav-toggle">
+      <summary>&#9776;</summary>
+      <nav>
+        <a href="#">Photos</a>
+        <a href="#">Gallery</a>
+        <a href="#">Contact</a>
+      </nav>
+    </details>
+  </header>
+
+  <div id="main">
+    <article>
+      <!-- Your main content here -->
+    </article>
+  </div>
+
+  <footer>Footer content</footer>
+</body>
+</html>

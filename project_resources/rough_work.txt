@@ -1,0 +1,86 @@
+<!doctype html>
+<title>Example</title>
+<style>
+  * { 
+	box-sizing: border-box;
+ }
+
+  body { 
+	display: flex; 
+	min-height: 100vh; 
+	flex-direction: 
+	column; 
+	margin: 0; }
+
+  #main { 
+	display: flex;
+	flex: 1;
+ }
+
+  #main > article {
+	 flex: 1;
+ }
+
+  header, footer {
+	 background: yellowgreen;
+	 height: 20vh;
+ }
+  header, footer, article { 
+	padding: 1em;
+ }
+
+/* ==== header/nav flex & burger ==== */
+
+header {
+
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+ }
+
+ header details > nav {
+   display: flex;
+   gap: 1em;
+ }
+
+ details summary {
+   display: none;
+   cursor: pointer;
+ }
+
+ @media (max-width: 600px) {
+   header details > nav   { display: none; }
+   details summary       { display: block; }
+   details[open] > nav   {
+     display: flex;
+     flex-direction: column;
+     position: absolute;
+     top: 20vh;    /* match header height */
+     left: 0;
+     width: 100%;
+   }
+ }
+</style>
+<body>
+
+ <header>
+   Header
+   <details>
+     <summary>☰</summary>
+     <nav>
+       <a href="#">Home</a>
+       <a href="#">HTML</a>
+       <a href="#">CSS</a>
+       <a href="#">Scripting</a>
+       <a href="#">Database</a>
+     </nav>
+   </details>
+ </header>
+
+ <div id="main">
+   <article>Article</article>
+
+ </div>
+
+ <footer>Footer</footer>
+</body>
