@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Photography Portfolio</title>
+
+  <style>
+    /* reset only the margin—fonts & colors come from style.css */
+    body {
+      margin: 0;
+      
+      background: linear-gradient(180deg, #e0d281, #f8bf2d);
+    }
+
+    header {
+      padding: 1em;
+      background: #fafafa;
+    }
+    header nav a {
+      margin-left: 1em;
+      text-decoration: none;
+      color: #333;
+    }
+
+    /* === page intro === */
+    .page-intro {
+      max-width: 90vw;
+      margin: 4em auto 1em;
+      padding: 0 2em;
+      text-align: center;
+    }
+    .page-intro h1 {
+      margin: 0;
+      
+      font-family: 'Libertinus Math', system-ui;
+      font-style: oblique 15deg;
+      font-weight: 200;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 1.em;
+      margin-bottom: 0.5em;
+    }
+    .page-intro p {
+      margin: 0.5em 0 0;
+      
+      color: #666;
+      font-family: 'Libertinus Math', system-ui;
+      font-style: oblique 15deg;
+      font-weight: 200;
+      font-size: 1em;
+      color: #000;
+      line-height: 1.4;
+      opacity: 0.8;
+    }
+
+    /* === portfolio grid === */
+    .flex-grid-thirds {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3em;
+      justify-content: center;
+      margin: 2em auto 4em;
+      width: 90vw;
+      padding: 0 2em;
+      
+      
+    }
+
+    .flex-grid-thirds .col {
+      flex: 1 1 calc(25% - 3em);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border-radius: 4px;
+      /* box-shadow: 0 2px 5px rgba(0,0,0,0.1); */
+      box-shadow: 0 0.1em 0.08em rgba(0,0,0,0.15);
+      /* background: #eee; remove when final */
+    }
+
+    /* keep the caption always visible */
+    .flex-grid-thirds .col > a {
+      display: block;
+      width: 100%;
+      aspect-ratio: 3/4;  /* tall image area */
+      overflow: hidden;
+      box-shadow: 0 0.1em 0.5em rgba(0,0,0,0.15);
+    }
+
+    .flex-grid-thirds .col img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 0.2%;
+      
+      transition: transform .2s;
+      cursor: pointer;
+      
+    }
+
+    .flex-grid-thirds img:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+
+    }
+
+    .flex-grid-thirds .caption {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5em 0;
+      text-align: center;
+      background: #fbf1d8;
+      /* color: black; */
+      
+      margin-top: 0.3em;
+
+      font-family: 'Libertinus Math', system-ui;
+      
+      font-weight: 400;
+      font-size: 1.25em;
+      color: #000;
+      line-height: 1.8;
+      opacity: 0.8;
+      text-shadow: 20%;
+    }
+
+    /* responsive grid */
+    @media (max-width: 800px) {
+      .flex-grid-thirds .col {
+        flex: 1 1 calc(50% - 3em);
+      }
+    }
+    @media (max-width: 500px) {
+      .flex-grid-thirds .col {
+        flex: 1 1 100%;
+      }
+      .page-intro h1 {
+        font-size: 2rem;
+      }
+      .page-intro p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libertinus+Math&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <button class="site-title">Abc Abcabcabca Fotografie</button>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="portfolio_main.html">Portfolio</a>
+      <a href="#">Donate</a>
+      <a href="#">Contact</a>
+    </nav>
+    <details class="toggle-details">
+      <summary>&#9776;</summary>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="portfolio_main.html">Portfolio</a>
+        <a href="#">Donate</a>
+        <a href="#">Contact</a>
+      </nav>
+    </details>
+  </header>
+
+  <main>
+    <section class="page-intro">
+      <h1>Portfolio Albums</h1>
+      <p>View the collection of Abc Abcabcabca</p>
+    </section>
+
+    <div class="flex-grid-thirds">
+
+      <a href="index.html" class="col" style="text-decoration: none;">
+        <div class="col">
+          <!-- <a href="album1.html"> -->
+            <img src="album_one/bench.webp" alt="Astro album cover">
+          <!-- </a> -->
+          <div class="caption">ASTRO</div>
+        </div>
+      </a>
+
+      <a href="index.html" class="col" style="text-decoration: none;">
+        <div class="col">
+          <!-- <a href="album2.html"> -->
+          <img src="album_one/flower.webp" alt="Landscapes album cover">
+          <!-- </a> -->
+          <div class="caption">LANDSCAPES</div>
+        </div>
+      </a>
+
+      <a href="index.html", class="col" style="text-decoration: none;">
+        <div class="col">
+          <!-- <a href="album3.html"> -->
+          <img src="album_one/longshot.webp" alt="Plants album cover">
+          <!-- </a> -->
+          <div class="caption">PLANTS</div>
+        </div>
+      </a>
+
+      <a href="index.html" class="col" style="text-decoration: none;">
+        <div class="col">
+          <!-- <a href="album4.html"> -->
+          <img src="album_one/wall.webp" alt="Birds album cover">
+          <!-- </a> -->
+          <div class="caption">BIRDS</div>
+        </div>
+      </a>
+    </div>
+  </main>
+
+  <footer style="padding:1em; text-align:center;">
+    Words
+  </footer>
+</body>
+</html>
