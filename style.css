@@ -93,16 +93,18 @@ main { margin-top: 5.5em; flex: 1 }
   height: 100vh;
   background: url("test_raws_burghausen_2025/darktable_exported/P1086678_01.webp") center/cover no-repeat;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  padding-top: 0.5em;
 }
 .hero h1 {
   color: #f0e5e5;
   font-family: 'Playfair Display', serif;
-  font-size: 2.3em;
+  font-size: 3.5em;
   text-shadow: 0 2px 4px rgba(7, 7, 7, 0.8);
   text-align: center;
   padding: 0 1em;
+  margin-top: 0.5em;
 }
 
 /* teaser row */
@@ -157,7 +159,8 @@ footer {
 
 /* Portfolio Albums Header */
 .portfolio-albums {
-  padding-top: 5em;
+  /* pull intro closer under header */
+  padding-top: 3em;
 }
 .portfolio-header {
   text-align: center;
@@ -169,8 +172,8 @@ footer {
   font-weight: 200;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  font-size: 1em;
-  margin-bottom: 0.5em;
+  font-size: 1.75em;
+  margin-bottom: 0.2em;
 }
 .portfolio-header .portfolio-sub {
   font-family: 'Libertinus Math', system-ui;
@@ -239,39 +242,15 @@ footer {
   }
 }
 
-/* Tablet and below: shrink header & adjust intro */
+
+
+/* Tablet (≤800px): header scrolls, collapse main’s gap */
 @media (max-width: 800px) {
   header {
-    padding: 1.5em 1em;
+    position: static;
   }
   main {
-    margin-top: 6em;
-  }
-  .page-intro {
-    margin: 6em auto 1em;
-    padding: 0 1em;
-  }
-  .page-intro h1 {
-    font-size: 1.5em;
-    line-height: 1.2;
-  }
-  .page-intro p {
-    font-size: 0.95rem;
+    margin-top: 0 !important;
   }
 }
 
-/* Mobile only: further shrink */
-@media (max-width: 600px) {
-  header {
-    padding: 1em 1em;
-  }
-  main {
-    margin-top: 7em;
-  }
-  .page-intro h1 {
-    font-size: 1.2em;
-  }
-  .page-intro p {
-    font-size: 0.9rem;
-  }
-}
