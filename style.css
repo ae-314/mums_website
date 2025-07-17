@@ -270,3 +270,31 @@
     max-width: 100%;
   }
 }
+
+/* Tablet and below */
+@media (max-width: 800px) {
+  .page-intro {
+    margin: 6em auto 1em;
+    padding: 0 1em;
+  }
+  .page-intro h1 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+  .page-intro p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Phone only */
+@media (max-width: 500px) {
+  .page-intro {
+    margin: 7em auto 1em;
+  }
+  .page-intro h1 {
+    font-size: 1.2rem;
+  }
+  .page-intro p {
+    font-size: 0.9rem;
+  }
+}
