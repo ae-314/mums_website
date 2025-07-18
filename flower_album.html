@@ -1,0 +1,147 @@
+<!-- © 2025 Aaron Elcheson. All Rights Reserved. -->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Flower and Plant Gallery</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #e0d281, #f8bf2d);
+      font-family: 'Libertinus Math', system-ui;
+    }
+    header {
+      padding: 1em;
+      background: #fafafa;
+    }
+    header nav a {
+      margin-left: 1em;
+      text-decoration: none;
+      color: #333;
+    }
+
+    /* === page intro === */
+    .page-intro {
+      max-width: 90vw;
+      margin: 4em auto 1em;
+      padding: 0 2em;
+      text-align: center;
+    }
+    .page-intro h1 {
+      margin: 0;
+      font-family: 'Libertinus Math', system-ui;
+      font-style: oblique 15deg;
+      font-weight: 200;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 1.75em;
+      margin-bottom: 0.5em;
+    }
+    .page-intro p {
+      margin: 0.5em 0 0;
+      color: #000;
+      font-family: 'Libertinus Math', system-ui;
+      font-style: oblique 15deg;
+      font-weight: 200;
+      font-size: 1em;
+      line-height: 1.4;
+      opacity: 0.8;
+    }
+
+    /* === Masonry-style gallery with Flexbox and CSS columns === */
+    .flex-grid-thirds {
+      column-count: 3;
+      column-gap: 1.5em;
+      width: 66vw;
+      margin: 2em auto 4em;
+    }
+    .flex-grid-thirds .col {
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 1em;
+      break-inside: avoid;
+    }
+    .flex-grid-thirds .col img {
+      width: 100%;
+      display: block;
+      border-radius: 4px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform .2s;
+      cursor: pointer;
+    }
+    .flex-grid-thirds .col img:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
+
+    /* Responsive column counts */
+    @media (max-width: 800px) {
+      .flex-grid-thirds {
+        column-count: 2;
+      }
+    }
+    @media (max-width: 500px) {
+      .flex-grid-thirds {
+        column-count: 1;
+        column-gap: 0;
+      }
+    }
+  </style>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libertinus+Math&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <button class="site-title">Evi Wendlinger Fotografie</button>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="portfolio_main.html">Portfolio</a>
+      <a href="#">Donate</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <details class="toggle-details">
+      <summary>&#9776;</summary>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="portfolio_main.html">Portfolio</a>
+        <a href="#">Donate</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </details>
+  </header>
+
+  <main>
+    <section class="page-intro">
+      <h1>Flower and Plant Fotografie</h1>
+      <p>by Evi Wendlinger</p>
+    </section>
+
+    <div class="flex-grid-thirds">
+      <div class="col"><img src="flower_gallery/blossoms.jpg" alt="blossoms"></div>
+      <div class="col"><img src="flower_gallery/foliage.jpg" alt="foliage"></div>
+      <div class="col"><img src="flower_gallery/flowers_pond.jpg" alt="flowers and pond"></div>  
+      <div class="col"><img src="flower_gallery/foliage2.jpg" alt="foliage2"></div> 
+      <div class="col"><img src="flower_gallery/gardens.jpg" alt="gardens"></div>
+      <div class="col"><img src="flower_gallery/hanging_basket.jpg" alt="hanging baskets"></div>
+      <div class="col"><img src="flower_gallery/purple_flowers.jpg" alt="purple flowers"></div>
+      <div class="col"><img src="flower_gallery/spiky_flower.jpg" alt="spiky flower"></div>
+      <div class="col"><img src="flower_gallery/white_flower.jpg" alt="white flower"></div>
+      
+      
+      
+      
+    </div>
+  </main>
+
+  <footer style="padding:1em; text-align:center;">
+    Photos and content © Evi Wendlinger 2025
+  </footer>
+</body>
+</html>
